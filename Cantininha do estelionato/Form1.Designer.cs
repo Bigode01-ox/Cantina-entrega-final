@@ -31,116 +31,144 @@
             listBox1 = new ListBox();
             listBox2 = new ListBox();
             btnAdicionar = new Button();
-            button2 = new Button();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
+            btnRemover = new Button();
             Total = new Label();
-            button1 = new Button();
+            btnFecharpedido = new Button();
+            nome = new TextBox();
+            label1 = new Label();
+            label2 = new Label();
+            label3 = new Label();
             SuspendLayout();
             // 
             // listBox1
             // 
-            listBox1.BackColor = Color.SaddleBrown;
-            listBox1.ForeColor = Color.Silver;
+            listBox1.BackColor = Color.White;
+            listBox1.ForeColor = Color.Black;
             listBox1.FormattingEnabled = true;
             listBox1.ItemHeight = 15;
-            listBox1.Items.AddRange(new object[] { "Pão de quijo - R$3,50", "Coxinha         -R$5,00", "Pastel" });
-            listBox1.Location = new Point(27, 148);
+            listBox1.Items.AddRange(new object[] { "Pão de queijo - R$3,50", "", "Coxinha - R$5,00", "", "Pastel de Carne - R$6,00", "", "Pastel de Queijo - R$5,50", "", "Suco Natural (300ml) - R$4,00", "", "Refrigerante Lata - R$ 4,50", "", "Hambúrguer Simples - R$8,00", "", "Hambúrguer com Queijo R$9,00", "", "X-Tudo - R$12,00", "", "Àgua Mineral (500ml)  - R$2,50", " " });
+            listBox1.Location = new Point(27, 124);
             listBox1.Name = "listBox1";
-            listBox1.Size = new Size(207, 109);
+            listBox1.Size = new Size(207, 229);
             listBox1.TabIndex = 0;
             // 
             // listBox2
             // 
-            listBox2.BackColor = Color.SaddleBrown;
-            listBox2.ForeColor = Color.Silver;
+            listBox2.BackColor = Color.White;
+            listBox2.ForeColor = Color.Black;
             listBox2.FormattingEnabled = true;
             listBox2.ItemHeight = 15;
-            listBox2.Location = new Point(557, 148);
+            listBox2.Location = new Point(557, 124);
             listBox2.Name = "listBox2";
-            listBox2.Size = new Size(212, 109);
+            listBox2.Size = new Size(212, 229);
             listBox2.TabIndex = 1;
             // 
             // btnAdicionar
             // 
-            btnAdicionar.BackColor = Color.SaddleBrown;
-            btnAdicionar.ForeColor = Color.Silver;
-            btnAdicionar.Location = new Point(303, 148);
+            btnAdicionar.BackColor = Color.FromArgb(128, 255, 128);
+            btnAdicionar.ForeColor = Color.Black;
+            btnAdicionar.Location = new Point(303, 153);
             btnAdicionar.Name = "btnAdicionar";
-            btnAdicionar.Size = new Size(82, 23);
+            btnAdicionar.Size = new Size(178, 23);
             btnAdicionar.TabIndex = 2;
-            btnAdicionar.Text = "ADICIONAR";
+            btnAdicionar.Text = "ADICIONAR PRODUTO";
             btnAdicionar.UseVisualStyleBackColor = false;
             btnAdicionar.Click += btnAdicionar_Click;
             // 
-            // button2
+            // btnRemover
             // 
-            button2.BackColor = Color.SaddleBrown;
-            button2.ForeColor = Color.Silver;
-            button2.Location = new Point(423, 148);
-            button2.Name = "button2";
-            button2.Size = new Size(82, 23);
-            button2.TabIndex = 3;
-            button2.Text = "REMOVER";
-            button2.UseVisualStyleBackColor = false;
-            // 
-            // textBox1
-            // 
-            textBox1.BackColor = Color.SaddleBrown;
-            textBox1.ForeColor = Color.Silver;
-            textBox1.Location = new Point(27, 83);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(207, 23);
-            textBox1.TabIndex = 4;
-            textBox1.Text = "PRODUTOS DA CANTINA BIGODE:";
-            // 
-            // textBox2
-            // 
-            textBox2.BackColor = Color.SaddleBrown;
-            textBox2.ForeColor = Color.Silver;
-            textBox2.Location = new Point(557, 83);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(212, 23);
-            textBox2.TabIndex = 5;
-            textBox2.Text = "CARRINHO:";
+            btnRemover.BackColor = Color.FromArgb(128, 255, 128);
+            btnRemover.ForeColor = Color.Black;
+            btnRemover.Location = new Point(303, 124);
+            btnRemover.Name = "btnRemover";
+            btnRemover.Size = new Size(178, 23);
+            btnRemover.TabIndex = 3;
+            btnRemover.Text = "REMOVER PRODUTO";
+            btnRemover.UseVisualStyleBackColor = false;
+            btnRemover.Click += btnRemover_Click;
             // 
             // Total
             // 
             Total.AutoSize = true;
-            Total.BackColor = Color.SaddleBrown;
-            Total.ForeColor = Color.Silver;
-            Total.Location = new Point(365, 331);
+            Total.BackColor = Color.FromArgb(128, 255, 128);
+            Total.ForeColor = Color.Black;
+            Total.Location = new Point(343, 338);
             Total.Name = "Total";
-            Total.Size = new Size(81, 15);
+            Total.Size = new Size(123, 15);
             Total.TabIndex = 6;
-            Total.Text = "TOTAL: R$0,00";
+            Total.Text = " VALOR TOTAL: R$0,00";
             Total.Click += PreçoTotal_click;
             // 
-            // button1
+            // btnFecharpedido
             // 
-            button1.BackColor = Color.SaddleBrown;
-            button1.ForeColor = Color.Silver;
-            button1.Location = new Point(303, 366);
-            button1.Name = "button1";
-            button1.Size = new Size(202, 34);
-            button1.TabIndex = 7;
-            button1.Text = "FECHAR PEDIDO";
-            button1.UseVisualStyleBackColor = false;
+            btnFecharpedido.BackColor = Color.FromArgb(128, 255, 128);
+            btnFecharpedido.ForeColor = Color.Black;
+            btnFecharpedido.Location = new Point(303, 366);
+            btnFecharpedido.Name = "btnFecharpedido";
+            btnFecharpedido.Size = new Size(202, 34);
+            btnFecharpedido.TabIndex = 7;
+            btnFecharpedido.Text = "FECHAR PEDIDO";
+            btnFecharpedido.UseVisualStyleBackColor = false;
+            btnFecharpedido.Click += btnFecharpedido_Click;
+            // 
+            // nome
+            // 
+            nome.ForeColor = Color.Black;
+            nome.Location = new Point(303, 207);
+            nome.Multiline = true;
+            nome.Name = "nome";
+            nome.Size = new Size(178, 23);
+            nome.TabIndex = 8;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = Color.FromArgb(128, 255, 128);
+            label1.ForeColor = Color.Black;
+            label1.Location = new Point(24, 93);
+            label1.Name = "label1";
+            label1.Size = new Size(210, 15);
+            label1.TabIndex = 9;
+            label1.Text = "PRODUTOS DISPONIVEIS PARA VENDA";
+            label1.Click += label1_Click;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.BackColor = Color.FromArgb(128, 255, 128);
+            label2.Location = new Point(560, 93);
+            label2.Name = "label2";
+            label2.Size = new Size(203, 15);
+            label2.TabIndex = 10;
+            label2.Text = "COMANDA                                             ";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.BackColor = Color.FromArgb(128, 255, 128);
+            label3.Location = new Point(367, 189);
+            label3.Name = "label3";
+            label3.Size = new Size(40, 15);
+            label3.TabIndex = 11;
+            label3.Text = "Nome";
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(button1);
+            Controls.Add(label3);
+            Controls.Add(label2);
+            Controls.Add(nome);
+            Controls.Add(btnFecharpedido);
             Controls.Add(Total);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
-            Controls.Add(button2);
+            Controls.Add(btnRemover);
             Controls.Add(btnAdicionar);
             Controls.Add(listBox2);
             Controls.Add(listBox1);
+            Controls.Add(label1);
             Name = "Form1";
+            StartPosition = FormStartPosition.CenterParent;
             Text = "Form1";
             Load += Form1_Load;
             ResumeLayout(false);
@@ -152,10 +180,12 @@
         private ListBox listBox1;
         private ListBox listBox2;
         private Button btnAdicionar;
-        private Button button2;
-        private TextBox textBox1;
-        private TextBox textBox2;
+        private Button btnRemover;
         private Label Total;
-        private Button button1;
+        private Button btnFecharpedido;
+        private TextBox nome;
+        private Label label1;
+        private Label label2;
+        private Label label3;
     }
 }

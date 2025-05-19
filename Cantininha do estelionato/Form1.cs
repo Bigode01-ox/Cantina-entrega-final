@@ -9,6 +9,7 @@ namespace Cantininha_do_estelionato
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            listBox1.Items.Add("Pão de Queijo");
 
         }
 
@@ -19,14 +20,48 @@ namespace Cantininha_do_estelionato
 
         private void btnAdicionar_Click(object sender, EventArgs e)
         {
-
-            string nome = txtNome.Text;
-            if (!string.IsNullOrEmpty(nome))
+            if (listBox1.SelectedItem != null)
             {
-                listBox1.Items.Add(nome);
-                txtNome.Clear();
-                txtNome.Focus();
+
+                object itemSelecionado = listBox1.SelectedItem;
+                listBox2.Items.Add(itemSelecionado);
+                listBox1.ClearSelected();
             }
+            else
+            {
+                MessageBox.Show("Selecione um item para adicionar");
+            }
+
+
+        }
+
+        private void btnRemover_Click(object sender, EventArgs e)
+        {
+            if (listBox2.SelectedItem != null)
+            {
+                object itemSelecionado = listBox2.SelectedItem;
+                listBox2.Items.Remove(itemSelecionado);
+                listBox1.ClearSelected();
+            }
+            else
+            {
+                MessageBox.Show("Selecione um item da comanda para remover");
+            }
+
+
+        }
+
+        private void btnFecharpedido_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show($"Pedido em preparação \n{nome.Text} \n{DateTime.Now}");
+            //MessageBox.Show(nome.Text);
+
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
