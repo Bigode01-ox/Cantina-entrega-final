@@ -38,6 +38,12 @@
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
+            pagamento = new ComboBox();
+            label4 = new Label();
+            numericUpDown1 = new NumericUpDown();
+            label5 = new Label();
+            numero = new Label();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
             SuspendLayout();
             // 
             // listBox1
@@ -45,8 +51,8 @@
             listBox1.BackColor = Color.White;
             listBox1.ForeColor = Color.Black;
             listBox1.FormattingEnabled = true;
+            listBox1.ImeMode = ImeMode.Off;
             listBox1.ItemHeight = 15;
-            listBox1.Items.AddRange(new object[] { "Pão de queijo - R$3,50", "", "Coxinha - R$5,00", "", "Pastel de Carne - R$6,00", "", "Pastel de Queijo - R$5,50", "", "Suco Natural (300ml) - R$4,00", "", "Refrigerante Lata - R$ 4,50", "", "Hambúrguer Simples - R$8,00", "", "Hambúrguer com Queijo R$9,00", "", "X-Tudo - R$12,00", "", "Àgua Mineral (500ml)  - R$2,50", " " });
             listBox1.Location = new Point(27, 124);
             listBox1.Name = "listBox1";
             listBox1.Size = new Size(207, 229);
@@ -67,7 +73,7 @@
             // 
             btnAdicionar.BackColor = Color.FromArgb(128, 255, 128);
             btnAdicionar.ForeColor = Color.Black;
-            btnAdicionar.Location = new Point(303, 153);
+            btnAdicionar.Location = new Point(303, 124);
             btnAdicionar.Name = "btnAdicionar";
             btnAdicionar.Size = new Size(178, 23);
             btnAdicionar.TabIndex = 2;
@@ -79,7 +85,7 @@
             // 
             btnRemover.BackColor = Color.FromArgb(128, 255, 128);
             btnRemover.ForeColor = Color.Black;
-            btnRemover.Location = new Point(303, 124);
+            btnRemover.Location = new Point(303, 153);
             btnRemover.Name = "btnRemover";
             btnRemover.Size = new Size(178, 23);
             btnRemover.TabIndex = 3;
@@ -92,18 +98,18 @@
             Total.AutoSize = true;
             Total.BackColor = Color.FromArgb(128, 255, 128);
             Total.ForeColor = Color.Black;
-            Total.Location = new Point(343, 338);
+            Total.Location = new Point(321, 327);
             Total.Name = "Total";
-            Total.Size = new Size(123, 15);
+            Total.Size = new Size(86, 15);
             Total.TabIndex = 6;
-            Total.Text = " VALOR TOTAL: R$0,00";
+            Total.Text = " VALOR TOTAL:";
             Total.Click += PreçoTotal_click;
             // 
             // btnFecharpedido
             // 
             btnFecharpedido.BackColor = Color.FromArgb(128, 255, 128);
             btnFecharpedido.ForeColor = Color.Black;
-            btnFecharpedido.Location = new Point(303, 366);
+            btnFecharpedido.Location = new Point(288, 368);
             btnFecharpedido.Name = "btnFecharpedido";
             btnFecharpedido.Size = new Size(202, 34);
             btnFecharpedido.TabIndex = 7;
@@ -152,11 +158,64 @@
             label3.TabIndex = 11;
             label3.Text = "Nome";
             // 
+            // pagamento
+            // 
+            pagamento.DropDownStyle = ComboBoxStyle.DropDownList;
+            pagamento.FormattingEnabled = true;
+            pagamento.Items.AddRange(new object[] { "Dinheiro", "Cartão", "Pix" });
+            pagamento.Location = new Point(303, 258);
+            pagamento.Name = "pagamento";
+            pagamento.Size = new Size(178, 23);
+            pagamento.TabIndex = 12;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.BackColor = Color.FromArgb(128, 255, 128);
+            label4.Location = new Point(335, 240);
+            label4.Name = "label4";
+            label4.Size = new Size(121, 15);
+            label4.TabIndex = 13;
+            label4.Text = "Forma de Pagamento";
+            // 
+            // numericUpDown1
+            // 
+            numericUpDown1.Location = new Point(30, 368);
+            numericUpDown1.Name = "numericUpDown1";
+            numericUpDown1.Size = new Size(204, 23);
+            numericUpDown1.TabIndex = 14;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.BackColor = Color.FromArgb(128, 255, 128);
+            label5.ForeColor = SystemColors.ControlLightLight;
+            label5.Location = new Point(418, 338);
+            label5.Name = "label5";
+            label5.Size = new Size(0, 15);
+            label5.TabIndex = 15;
+            // 
+            // numero
+            // 
+            numero.AutoSize = true;
+            numero.BackColor = Color.FromArgb(128, 255, 128);
+            numero.Location = new Point(404, 327);
+            numero.Name = "numero";
+            numero.Size = new Size(28, 15);
+            numero.TabIndex = 16;
+            numero.Text = "0,00";
+            numero.Click += numero_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(numero);
+            Controls.Add(label5);
+            Controls.Add(numericUpDown1);
+            Controls.Add(label4);
+            Controls.Add(pagamento);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(nome);
@@ -171,6 +230,7 @@
             StartPosition = FormStartPosition.CenterParent;
             Text = "Form1";
             Load += Form1_Load;
+            ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -187,5 +247,10 @@
         private Label label1;
         private Label label2;
         private Label label3;
+        private ComboBox pagamento;
+        private Label label4;
+        private NumericUpDown numericUpDown1;
+        private Label label5;
+        private Label numero;
     }
 }

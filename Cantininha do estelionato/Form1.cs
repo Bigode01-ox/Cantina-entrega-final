@@ -2,6 +2,7 @@ namespace Cantininha_do_estelionato
 {
     public partial class Form1 : Form
     {
+        decimal total = 0;
         public Form1()
         {
             InitializeComponent();
@@ -9,8 +10,16 @@ namespace Cantininha_do_estelionato
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            listBox1.Items.Add("Pão de Queijo");
-
+            listBox1.Items.Add(new Produto("Pão de Queijo", 3.50m, 0));
+            listBox1.Items.Add(new Produto("Coxinha", 5.00m, 0));
+            listBox1.Items.Add(new Produto("Pastel de Carne", 6.00m, 0));
+            listBox1.Items.Add(new Produto("Pastel de Queijo", 5.50m, 0));
+            listBox1.Items.Add(new Produto("Suco Natural (300ml)", 4.00m, 0));
+            listBox1.Items.Add(new Produto("Refrigerante Lata", 4.50m, 0));
+            listBox1.Items.Add(new Produto("Burgão Simples", 8.00m, 0));
+            listBox1.Items.Add(new Produto("Burgão com Queijo", 9.00m, 0));
+            listBox1.Items.Add(new Produto("X-Tudão", 12.00m, 0));
+            listBox1.Items.Add(new Produto("Agua Mineral", 2.50m, 0));
         }
 
         private void PreçoTotal_click(object sender, EventArgs e)
@@ -23,13 +32,16 @@ namespace Cantininha_do_estelionato
             if (listBox1.SelectedItem != null)
             {
 
-                object itemSelecionado = listBox1.SelectedItem;
+                Produto itemSelecionado = (Produto)listBox1.SelectedItem;
                 listBox2.Items.Add(itemSelecionado);
+                total += itemSelecionado.valor;
                 listBox1.ClearSelected();
+                numero.Text = total.ToString();
             }
             else
             {
                 MessageBox.Show("Selecione um item para adicionar");
+
             }
 
 
@@ -39,9 +51,11 @@ namespace Cantininha_do_estelionato
         {
             if (listBox2.SelectedItem != null)
             {
-                object itemSelecionado = listBox2.SelectedItem;
+                Produto itemSelecionado = (Produto)listBox2.SelectedItem;
                 listBox2.Items.Remove(itemSelecionado);
+                total -= itemSelecionado.valor;
                 listBox1.ClearSelected();
+                numero.Text = total.ToString();
             }
             else
             {
@@ -49,17 +63,45 @@ namespace Cantininha_do_estelionato
             }
 
 
+
         }
 
         private void btnFecharpedido_Click(object sender, EventArgs e)
         {
-            MessageBox.Show($"Pedido em preparação \n{nome.Text} \n{DateTime.Now}");
+            if (listBox2.Items.Count == 0)
+            {
+                MessageBox.Show("A comanda ta vazia animal");
+                return;
+            }
+
+
+            if (string.IsNullOrWhiteSpace(nome.Text))
+            {
+                MessageBox.Show("Tem que por seu nome garai");
+                return;
+            }
+
+
+            if (pagamento.SelectedIndex == -1)
+            {
+                MessageBox.Show("Escolha a Forma de Pagamento");
+                return;
+            }
+
+
+
+            MessageBox.Show($"Pedido em preparação \n{"Nome:"} {nome.Text} \n{"Forma de Pagamento:"} {pagamento.Text} \n{DateTime.Now} \n{total:F2}");
             //MessageBox.Show(nome.Text);
 
 
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void numero_Click(object sender, EventArgs e)
         {
 
         }
