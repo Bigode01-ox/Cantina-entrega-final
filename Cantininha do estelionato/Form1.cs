@@ -9,7 +9,6 @@ namespace Cantininha_do_estelionato
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            listBox1.Items.Add("Pão de Queijo");
 
         }
 
@@ -31,6 +30,7 @@ namespace Cantininha_do_estelionato
             {
                 MessageBox.Show("Selecione um item para adicionar");
             }
+           
 
 
         }
@@ -53,7 +53,7 @@ namespace Cantininha_do_estelionato
 
         private void btnFecharpedido_Click(object sender, EventArgs e)
         {
-            MessageBox.Show($"Pedido em preparação \n{nome.Text} \n{DateTime.Now}");
+            MessageBox.Show($"Pedido em preparação \n{"Nome:"} {nome.Text} \n{"Forma de Pagamento:"} {pagamento.Text} \n{DateTime.Now}");
             //MessageBox.Show(nome.Text);
 
 

@@ -38,6 +38,9 @@
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
+            label4 = new Label();
+            comboBox1 = new ComboBox();
+            pagamento = new ComboBox();
             SuspendLayout();
             // 
             // listBox1
@@ -92,7 +95,7 @@
             Total.AutoSize = true;
             Total.BackColor = Color.FromArgb(128, 255, 128);
             Total.ForeColor = Color.Black;
-            Total.Location = new Point(343, 338);
+            Total.Location = new Point(329, 350);
             Total.Name = "Total";
             Total.Size = new Size(123, 15);
             Total.TabIndex = 6;
@@ -103,7 +106,7 @@
             // 
             btnFecharpedido.BackColor = Color.FromArgb(128, 255, 128);
             btnFecharpedido.ForeColor = Color.Black;
-            btnFecharpedido.Location = new Point(303, 366);
+            btnFecharpedido.Location = new Point(292, 368);
             btnFecharpedido.Name = "btnFecharpedido";
             btnFecharpedido.Size = new Size(202, 34);
             btnFecharpedido.TabIndex = 7;
@@ -146,17 +149,49 @@
             // 
             label3.AutoSize = true;
             label3.BackColor = Color.FromArgb(128, 255, 128);
-            label3.Location = new Point(367, 189);
+            label3.Location = new Point(374, 189);
             label3.Name = "label3";
             label3.Size = new Size(40, 15);
             label3.TabIndex = 11;
             label3.Text = "Nome";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.BackColor = Color.FromArgb(128, 255, 128);
+            label4.Location = new Point(338, 243);
+            label4.Name = "label4";
+            label4.Size = new Size(114, 15);
+            label4.TabIndex = 12;
+            label4.Text = "Forma de pagameto";
+            // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(0, 0);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(121, 23);
+            comboBox1.TabIndex = 13;
+            // 
+            // pagamento
+            // 
+            pagamento.BackColor = Color.Black;
+            pagamento.ForeColor = Color.White;
+            pagamento.FormattingEnabled = true;
+            pagamento.Items.AddRange(new object[] { "Dinheiro", "Cartão", "Pix" });
+            pagamento.Location = new Point(303, 261);
+            pagamento.Name = "pagamento";
+            pagamento.Size = new Size(178, 23);
+            pagamento.TabIndex = 14;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(pagamento);
+            Controls.Add(comboBox1);
+            Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(nome);
@@ -187,5 +222,8 @@
         private Label label1;
         private Label label2;
         private Label label3;
+        private Label label4;
+        private ComboBox comboBox1;
+        private ComboBox pagamento;
     }
 }
