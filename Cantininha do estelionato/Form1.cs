@@ -33,10 +33,11 @@ namespace Cantininha_do_estelionato
             {
 
                 Produto itemSelecionado = (Produto)listBox1.SelectedItem;
+                itemSelecionado.quantidade = (int)txtQuantidade.Value;
                 listBox2.Items.Add(itemSelecionado);
-                total += itemSelecionado.valor;
+                total += itemSelecionado.valor * itemSelecionado.quantidade;
                 listBox1.ClearSelected();
-                numero.Text = total.ToString();
+                numero.Text = total.ToString();                
             }
             else
             {
@@ -55,6 +56,7 @@ namespace Cantininha_do_estelionato
                 listBox2.Items.Remove(itemSelecionado);
                 total -= itemSelecionado.valor;
                 listBox1.ClearSelected();
+                listBox2.ClearSelected();
                 numero.Text = total.ToString();
             }
             else
@@ -90,7 +92,7 @@ namespace Cantininha_do_estelionato
 
 
 
-            MessageBox.Show($"Pedido em preparação \n{"Nome:"} {nome.Text} \n{"Forma de Pagamento:"} {pagamento.Text} \n{DateTime.Now} \n{total:F2}");
+            MessageBox.Show($"PEDIDO EM PREPARAÇÃO \n\n{"Nome:"} {nome.Text}\n \n{"Forma de Pagamento:"} {pagamento.Text}  \n{DateTime.Now}\n{"Valor Total:"} {total:F2} ");
             //MessageBox.Show(nome.Text);
 
 

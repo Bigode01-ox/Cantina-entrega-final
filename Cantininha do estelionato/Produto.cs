@@ -21,7 +21,7 @@ namespace Cantininha_do_estelionato
 
         public override string ToString()
         {
-            return $"{nome} - R${valor}";
+            return $"{nome} - R${valor} - {quantidade}";
         }
     }
 }

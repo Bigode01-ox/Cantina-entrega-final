@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             listBox1 = new ListBox();
             listBox2 = new ListBox();
             btnAdicionar = new Button();
@@ -40,15 +41,15 @@
             label3 = new Label();
             pagamento = new ComboBox();
             label4 = new Label();
-            numericUpDown1 = new NumericUpDown();
+            txtQuantidade = new NumericUpDown();
             label5 = new Label();
             numero = new Label();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)txtQuantidade).BeginInit();
             SuspendLayout();
             // 
             // listBox1
             // 
-            listBox1.BackColor = Color.White;
+            listBox1.BackColor = Color.FromArgb(120, 118, 100);
             listBox1.ForeColor = Color.Black;
             listBox1.FormattingEnabled = true;
             listBox1.ImeMode = ImeMode.Off;
@@ -60,8 +61,8 @@
             // 
             // listBox2
             // 
-            listBox2.BackColor = Color.White;
-            listBox2.ForeColor = Color.Black;
+            listBox2.BackColor = Color.FromArgb(120, 118, 100);
+            listBox2.ForeColor = SystemColors.ActiveCaptionText;
             listBox2.FormattingEnabled = true;
             listBox2.ItemHeight = 15;
             listBox2.Location = new Point(557, 124);
@@ -178,12 +179,13 @@
             label4.TabIndex = 13;
             label4.Text = "Forma de Pagamento";
             // 
-            // numericUpDown1
+            // txtQuantidade
             // 
-            numericUpDown1.Location = new Point(30, 368);
-            numericUpDown1.Name = "numericUpDown1";
-            numericUpDown1.Size = new Size(204, 23);
-            numericUpDown1.TabIndex = 14;
+            txtQuantidade.Location = new Point(30, 368);
+            txtQuantidade.Name = "txtQuantidade";
+            txtQuantidade.Size = new Size(204, 23);
+            txtQuantidade.TabIndex = 14;
+            txtQuantidade.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
             // label5
             // 
@@ -210,10 +212,11 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(800, 450);
             Controls.Add(numero);
             Controls.Add(label5);
-            Controls.Add(numericUpDown1);
+            Controls.Add(txtQuantidade);
             Controls.Add(label4);
             Controls.Add(pagamento);
             Controls.Add(label3);
@@ -230,7 +233,7 @@
             StartPosition = FormStartPosition.CenterParent;
             Text = "Form1";
             Load += Form1_Load;
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)txtQuantidade).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -249,7 +252,7 @@
         private Label label3;
         private ComboBox pagamento;
         private Label label4;
-        private NumericUpDown numericUpDown1;
+        private NumericUpDown txtQuantidade;
         private Label label5;
         private Label numero;
     }
