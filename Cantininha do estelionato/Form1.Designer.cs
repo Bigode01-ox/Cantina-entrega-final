@@ -44,39 +44,42 @@
             txtQuantidade = new NumericUpDown();
             label5 = new Label();
             numero = new Label();
+            txtdinheiro = new TextBox();
+            txttroco = new Label();
             ((System.ComponentModel.ISupportInitialize)txtQuantidade).BeginInit();
             SuspendLayout();
             // 
             // listBox1
             // 
             listBox1.BackColor = Color.FromArgb(120, 118, 100);
-            listBox1.ForeColor = Color.Black;
+            listBox1.ForeColor = Color.GreenYellow;
             listBox1.FormattingEnabled = true;
             listBox1.ImeMode = ImeMode.Off;
             listBox1.ItemHeight = 15;
-            listBox1.Location = new Point(27, 124);
+            listBox1.Location = new Point(27, 151);
             listBox1.Name = "listBox1";
-            listBox1.Size = new Size(207, 229);
+            listBox1.Size = new Size(210, 229);
             listBox1.TabIndex = 0;
+            listBox1.SelectedIndexChanged += listBox1_SelectedIndexChanged;
             // 
             // listBox2
             // 
             listBox2.BackColor = Color.FromArgb(120, 118, 100);
-            listBox2.ForeColor = SystemColors.ActiveCaptionText;
+            listBox2.ForeColor = Color.GreenYellow;
             listBox2.FormattingEnabled = true;
             listBox2.ItemHeight = 15;
-            listBox2.Location = new Point(557, 124);
+            listBox2.Location = new Point(560, 151);
             listBox2.Name = "listBox2";
             listBox2.Size = new Size(212, 229);
             listBox2.TabIndex = 1;
             // 
             // btnAdicionar
             // 
-            btnAdicionar.BackColor = Color.FromArgb(128, 255, 128);
-            btnAdicionar.ForeColor = Color.Black;
-            btnAdicionar.Location = new Point(303, 124);
+            btnAdicionar.BackColor = Color.Gray;
+            btnAdicionar.ForeColor = Color.GreenYellow;
+            btnAdicionar.Location = new Point(303, 113);
             btnAdicionar.Name = "btnAdicionar";
-            btnAdicionar.Size = new Size(178, 23);
+            btnAdicionar.Size = new Size(178, 30);
             btnAdicionar.TabIndex = 2;
             btnAdicionar.Text = "ADICIONAR PRODUTO";
             btnAdicionar.UseVisualStyleBackColor = false;
@@ -84,11 +87,11 @@
             // 
             // btnRemover
             // 
-            btnRemover.BackColor = Color.FromArgb(128, 255, 128);
-            btnRemover.ForeColor = Color.Black;
+            btnRemover.BackColor = Color.Gray;
+            btnRemover.ForeColor = Color.GreenYellow;
             btnRemover.Location = new Point(303, 153);
             btnRemover.Name = "btnRemover";
-            btnRemover.Size = new Size(178, 23);
+            btnRemover.Size = new Size(178, 33);
             btnRemover.TabIndex = 3;
             btnRemover.Text = "REMOVER PRODUTO";
             btnRemover.UseVisualStyleBackColor = false;
@@ -97,9 +100,9 @@
             // Total
             // 
             Total.AutoSize = true;
-            Total.BackColor = Color.FromArgb(128, 255, 128);
-            Total.ForeColor = Color.Black;
-            Total.Location = new Point(321, 327);
+            Total.BackColor = Color.Gray;
+            Total.ForeColor = Color.GreenYellow;
+            Total.Location = new Point(321, 350);
             Total.Name = "Total";
             Total.Size = new Size(86, 15);
             Total.TabIndex = 6;
@@ -108,11 +111,11 @@
             // 
             // btnFecharpedido
             // 
-            btnFecharpedido.BackColor = Color.FromArgb(128, 255, 128);
-            btnFecharpedido.ForeColor = Color.Black;
-            btnFecharpedido.Location = new Point(288, 368);
+            btnFecharpedido.BackColor = Color.Gray;
+            btnFecharpedido.ForeColor = Color.GreenYellow;
+            btnFecharpedido.Location = new Point(288, 377);
             btnFecharpedido.Name = "btnFecharpedido";
-            btnFecharpedido.Size = new Size(202, 34);
+            btnFecharpedido.Size = new Size(202, 43);
             btnFecharpedido.TabIndex = 7;
             btnFecharpedido.Text = "FECHAR PEDIDO";
             btnFecharpedido.UseVisualStyleBackColor = false;
@@ -120,6 +123,7 @@
             // 
             // nome
             // 
+            nome.BackColor = Color.Gray;
             nome.ForeColor = Color.Black;
             nome.Location = new Point(303, 207);
             nome.Multiline = true;
@@ -130,9 +134,9 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.BackColor = Color.FromArgb(128, 255, 128);
-            label1.ForeColor = Color.Black;
-            label1.Location = new Point(24, 93);
+            label1.BackColor = Color.Gray;
+            label1.ForeColor = Color.GreenYellow;
+            label1.Location = new Point(27, 128);
             label1.Name = "label1";
             label1.Size = new Size(210, 15);
             label1.TabIndex = 9;
@@ -142,8 +146,9 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.BackColor = Color.FromArgb(128, 255, 128);
-            label2.Location = new Point(560, 93);
+            label2.BackColor = Color.Gray;
+            label2.ForeColor = Color.GreenYellow;
+            label2.Location = new Point(560, 128);
             label2.Name = "label2";
             label2.Size = new Size(203, 15);
             label2.TabIndex = 10;
@@ -152,7 +157,8 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.BackColor = Color.FromArgb(128, 255, 128);
+            label3.BackColor = Color.Gray;
+            label3.ForeColor = Color.GreenYellow;
             label3.Location = new Point(367, 189);
             label3.Name = "label3";
             label3.Size = new Size(40, 15);
@@ -161,6 +167,7 @@
             // 
             // pagamento
             // 
+            pagamento.BackColor = Color.Gray;
             pagamento.DropDownStyle = ComboBoxStyle.DropDownList;
             pagamento.FormattingEnabled = true;
             pagamento.Items.AddRange(new object[] { "Dinheiro", "Cartão", "Pix" });
@@ -172,7 +179,8 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.BackColor = Color.FromArgb(128, 255, 128);
+            label4.BackColor = Color.Gray;
+            label4.ForeColor = Color.GreenYellow;
             label4.Location = new Point(335, 240);
             label4.Name = "label4";
             label4.Size = new Size(121, 15);
@@ -181,11 +189,14 @@
             // 
             // txtQuantidade
             // 
-            txtQuantidade.Location = new Point(30, 368);
+            txtQuantidade.BackColor = Color.Gray;
+            txtQuantidade.ForeColor = Color.GreenYellow;
+            txtQuantidade.Location = new Point(27, 397);
             txtQuantidade.Name = "txtQuantidade";
-            txtQuantidade.Size = new Size(204, 23);
+            txtQuantidade.Size = new Size(210, 23);
             txtQuantidade.TabIndex = 14;
             txtQuantidade.Value = new decimal(new int[] { 1, 0, 0, 0 });
+            txtQuantidade.ValueChanged += txtQuantidade_ValueChanged;
             // 
             // label5
             // 
@@ -200,13 +211,34 @@
             // numero
             // 
             numero.AutoSize = true;
-            numero.BackColor = Color.FromArgb(128, 255, 128);
-            numero.Location = new Point(404, 327);
+            numero.BackColor = Color.Gray;
+            numero.ForeColor = Color.GreenYellow;
+            numero.Location = new Point(413, 350);
             numero.Name = "numero";
             numero.Size = new Size(28, 15);
             numero.TabIndex = 16;
             numero.Text = "0,00";
             numero.Click += numero_Click;
+            // 
+            // txtdinheiro
+            // 
+            txtdinheiro.BackColor = Color.Gray;
+            txtdinheiro.Location = new Point(303, 287);
+            txtdinheiro.Name = "txtdinheiro";
+            txtdinheiro.Size = new Size(178, 23);
+            txtdinheiro.TabIndex = 17;
+            txtdinheiro.TextChanged += txtdinheiro_TextChanged;
+            // 
+            // txttroco
+            // 
+            txttroco.AutoSize = true;
+            txttroco.BackColor = Color.Gray;
+            txttroco.ForeColor = Color.GreenYellow;
+            txttroco.Location = new Point(367, 326);
+            txttroco.Name = "txttroco";
+            txttroco.Size = new Size(37, 15);
+            txttroco.TabIndex = 18;
+            txttroco.Text = "Troco";
             // 
             // Form1
             // 
@@ -214,6 +246,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(800, 450);
+            Controls.Add(txttroco);
+            Controls.Add(txtdinheiro);
             Controls.Add(numero);
             Controls.Add(label5);
             Controls.Add(txtQuantidade);
@@ -255,5 +289,7 @@
         private NumericUpDown txtQuantidade;
         private Label label5;
         private Label numero;
+        private TextBox txtdinheiro;
+        private Label txttroco;
     }
 }

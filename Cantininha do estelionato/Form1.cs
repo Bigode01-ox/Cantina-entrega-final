@@ -37,7 +37,7 @@ namespace Cantininha_do_estelionato
                 listBox2.Items.Add(itemSelecionado);
                 total += itemSelecionado.valor * itemSelecionado.quantidade;
                 listBox1.ClearSelected();
-                numero.Text = total.ToString();                
+                numero.Text = total.ToString();
             }
             else
             {
@@ -54,7 +54,7 @@ namespace Cantininha_do_estelionato
             {
                 Produto itemSelecionado = (Produto)listBox2.SelectedItem;
                 listBox2.Items.Remove(itemSelecionado);
-                total -= itemSelecionado.valor;
+                total -= itemSelecionado.valor; // total = total - itemSelecionado.valor;
                 listBox1.ClearSelected();
                 listBox2.ClearSelected();
                 numero.Text = total.ToString();
@@ -104,6 +104,27 @@ namespace Cantininha_do_estelionato
         }
 
         private void numero_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtdinheiro_TextChanged(object sender, EventArgs e)
+        {
+            decimal valorRecebido = 0;
+            decimal.TryParse(txtdinheiro.Text, out valorRecebido);
+            decimal troco = valorRecebido - total;
+            txttroco.Text = $"Troco: R$ {troco.ToString()}";   
+
+
+
+        }
+
+        private void txtQuantidade_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
