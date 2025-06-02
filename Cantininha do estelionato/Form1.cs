@@ -113,7 +113,7 @@ namespace Cantininha_do_estelionato
             decimal valorRecebido = 0;
             decimal.TryParse(txtdinheiro.Text, out valorRecebido);
             decimal troco = valorRecebido - total;
-            txttroco.Text = $"Troco: R$ {troco.ToString()}";   
+            txttroco.Text = $"Troco: R$ {troco.ToString()}";
 
 
 
@@ -126,6 +126,35 @@ namespace Cantininha_do_estelionato
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void btnviagem_Click(object sender, EventArgs e)
+        {
+            if (listBox2.Items.Count == 0)
+            {
+                MessageBox.Show("A comanda ta vazia animal");
+                return;
+            }
+
+
+            if (string.IsNullOrWhiteSpace(nome.Text))
+            {
+                MessageBox.Show("Tem que por seu nome garai");
+                return;
+            }
+
+
+            if (pagamento.SelectedIndex == -1)
+            {
+                MessageBox.Show("Escolha a Forma de Pagamento");
+                return;
+            }
+
+
+
+            MessageBox.Show($"PEDIDO EM PREPARAÇÃO \n\n{"Nome:"} {nome.Text}\n \n{"Forma de Pagamento:"} {pagamento.Text}  \n{DateTime.Now}\n{"Valor Total:"} {total:F2} \n pra viagem ");
+            //MessageBox.Show(nome.Text);
 
         }
     }

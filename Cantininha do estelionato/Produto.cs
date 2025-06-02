@@ -9,6 +9,7 @@ namespace Cantininha_do_estelionato
     internal class Produto
     {
        public string nome { get; set; }
+
         public decimal valor { get; set; }
         public int quantidade { get; set; }
 
