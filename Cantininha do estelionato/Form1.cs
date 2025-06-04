@@ -90,9 +90,27 @@ namespace Cantininha_do_estelionato
                 return;
             }
 
+            List<Produto> listadeprodutos = new List<Produto>();
+
+            foreach (var item in listBox2.Items)
+            {
+                listadeprodutos.Add(item as Produto);
+            }
+
+            Pedido pidido = new Pedido()
+            {
+                nome = nome.Text,
+                data = DateTime.Now,
+                pagamento = pagamento.SelectedItem.ToString(),
+                produtos = listadeprodutos,
+                status = status.feito
 
 
-            MessageBox.Show($"PEDIDO EM PREPARAÇÃO \n\n{"Nome:"} {nome.Text}\n \n{"Forma de Pagamento:"} {pagamento.Text}  \n{DateTime.Now}\n{"Valor Total:"} {total:F2} ");
+
+            };
+            listadepedidos.pedidos.Add(pidido);
+
+
             //MessageBox.Show(nome.Text);
 
 
@@ -156,6 +174,18 @@ namespace Cantininha_do_estelionato
             MessageBox.Show($"PEDIDO EM PREPARAÇÃO \n\n{"Nome:"} {nome.Text}\n \n{"Forma de Pagamento:"} {pagamento.Text}  \n{DateTime.Now}\n{"Valor Total:"} {total:F2} \n pra viagem ");
             //MessageBox.Show(nome.Text);
 
+        }
+
+        private void pagamento_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Balcão balcao = new Balcão();
+
+            balcao.ShowDialog();
         }
     }
 }

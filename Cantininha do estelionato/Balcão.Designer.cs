@@ -36,9 +36,9 @@
             // 
             listBox1.FormattingEnabled = true;
             listBox1.ItemHeight = 15;
-            listBox1.Location = new Point(348, 195);
+            listBox1.Location = new Point(39, 30);
             listBox1.Name = "listBox1";
-            listBox1.Size = new Size(120, 94);
+            listBox1.Size = new Size(234, 409);
             listBox1.TabIndex = 0;
             // 
             // Balcão

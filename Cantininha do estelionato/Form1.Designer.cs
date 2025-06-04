@@ -47,6 +47,7 @@
             txtdinheiro = new TextBox();
             txttroco = new Label();
             btnviagem = new Button();
+            button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)txtQuantidade).BeginInit();
             SuspendLayout();
             // 
@@ -253,12 +254,23 @@
             btnviagem.UseVisualStyleBackColor = false;
             btnviagem.Click += btnviagem_Click;
             // 
+            // button1
+            // 
+            button1.Location = new Point(356, 84);
+            button1.Name = "button1";
+            button1.Size = new Size(75, 23);
+            button1.TabIndex = 20;
+            button1.Text = "button1";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(800, 450);
+            Controls.Add(button1);
             Controls.Add(btnviagem);
             Controls.Add(txttroco);
             Controls.Add(txtdinheiro);
@@ -306,5 +318,6 @@
         private TextBox txtdinheiro;
         private Label txttroco;
         private Button btnviagem;
+        private Button button1;
     }
 }

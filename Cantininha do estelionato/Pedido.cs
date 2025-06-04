@@ -6,18 +6,34 @@ using System.Threading.Tasks;
 
 namespace Cantininha_do_estelionato
 {
-    internal class Pedido
+    public class Pedido
     {
         public string nome { get; set; }
-        public string data { get; set; }
-        
+        public DateTime data { get; set; }
+        public string pagamento { get; set; }
+        public List<Produto> produtos { get; set; }
+        public status status { get; set; }
+
+        public override string ToString()
+        {
+            return $"{nome} - {data} - {pagamento} - {produtos} - {status}";
+         }
     }
-        public enum status
+    public static class listadepedidos
+
+    {
+
+        public static List<Pedido> pedidos = new List<Pedido>(); 
+    }
+    public enum status
     {
         Conluido,
         Preparando,
         feito,
         Para_viagem,
-        
+
     }
+
+
+
 }

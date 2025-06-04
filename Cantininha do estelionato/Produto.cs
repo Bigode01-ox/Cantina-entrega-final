@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Cantininha_do_estelionato
 {
-    internal class Produto
+    public class Produto
     {
        public string nome { get; set; }
 
