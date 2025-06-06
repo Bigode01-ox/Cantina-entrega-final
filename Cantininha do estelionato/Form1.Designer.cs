@@ -256,12 +256,14 @@
             // 
             // button1
             // 
-            button1.Location = new Point(356, 84);
+            button1.BackColor = Color.Gray;
+            button1.ForeColor = Color.GreenYellow;
+            button1.Location = new Point(628, 24);
             button1.Name = "button1";
-            button1.Size = new Size(75, 23);
+            button1.Size = new Size(144, 37);
             button1.TabIndex = 20;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
+            button1.Text = "IR PARA BALCÂO";
+            button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
             // Form1

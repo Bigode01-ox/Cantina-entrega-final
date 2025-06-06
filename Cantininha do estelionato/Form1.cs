@@ -109,7 +109,7 @@ namespace Cantininha_do_estelionato
 
             };
             listadepedidos.pedidos.Add(pidido);
-
+            MessageBox.Show($"PEDIDO EM PREPARAÇÃO \n\n{"Nome:"} {nome.Text}\n \n{"Forma de Pagamento:"} {pagamento.Text}  \n{DateTime.Now}\n{"Valor Total:"} {total:F2} \n");
 
             //MessageBox.Show(nome.Text);
 

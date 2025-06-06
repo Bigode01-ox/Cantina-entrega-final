@@ -30,16 +30,44 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Balcão));
             listBox1 = new ListBox();
+            listBox2 = new ListBox();
+            btnentregar = new Button();
             SuspendLayout();
             // 
             // listBox1
             // 
+            listBox1.BackColor = Color.Gray;
+            listBox1.BorderStyle = BorderStyle.FixedSingle;
+            listBox1.ForeColor = Color.GreenYellow;
             listBox1.FormattingEnabled = true;
             listBox1.ItemHeight = 15;
-            listBox1.Location = new Point(39, 30);
+            listBox1.Location = new Point(0, -1);
             listBox1.Name = "listBox1";
-            listBox1.Size = new Size(234, 409);
+            listBox1.Size = new Size(343, 167);
             listBox1.TabIndex = 0;
+            // 
+            // listBox2
+            // 
+            listBox2.BackColor = Color.Gray;
+            listBox2.ForeColor = Color.GreenYellow;
+            listBox2.FormattingEnabled = true;
+            listBox2.ItemHeight = 15;
+            listBox2.Location = new Point(462, 12);
+            listBox2.Name = "listBox2";
+            listBox2.Size = new Size(343, 169);
+            listBox2.TabIndex = 1;
+            // 
+            // btnentregar
+            // 
+            btnentregar.BackColor = Color.Gray;
+            btnentregar.ForeColor = Color.GreenYellow;
+            btnentregar.Location = new Point(122, 172);
+            btnentregar.Name = "btnentregar";
+            btnentregar.Size = new Size(101, 27);
+            btnentregar.TabIndex = 2;
+            btnentregar.Text = "Entregar";
+            btnentregar.UseVisualStyleBackColor = false;
+            btnentregar.Click += btnentregar_Click;
             // 
             // Balcão
             // 
@@ -48,6 +76,8 @@
             BackColor = SystemColors.ActiveCaption;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(800, 450);
+            Controls.Add(btnentregar);
+            Controls.Add(listBox2);
             Controls.Add(listBox1);
             ForeColor = Color.Coral;
             ImeMode = ImeMode.Hiragana;
@@ -60,5 +90,7 @@
         #endregion
 
         private ListBox listBox1;
+        private ListBox listBox2;
+        private Button btnentregar;
     }
 }

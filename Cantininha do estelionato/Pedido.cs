@@ -16,7 +16,7 @@ namespace Cantininha_do_estelionato
 
         public override string ToString()
         {
-            return $"{nome} - {data} - {pagamento} - {produtos} - {status}";
+            return $"{nome} - {data} - {pagamento} - {status}";
          }
     }
     public static class listadepedidos
