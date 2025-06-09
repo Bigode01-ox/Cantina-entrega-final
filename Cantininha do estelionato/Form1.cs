@@ -2,6 +2,7 @@ namespace Cantininha_do_estelionato
 {
     public partial class Form1 : Form
     {
+        List<Produto> listadeprodutos = new List<Produto>();
         decimal total = 0;
         public Form1()
         {
@@ -25,7 +26,7 @@ namespace Cantininha_do_estelionato
         private void PreçoTotal_click(object sender, EventArgs e)
         {
 
-        }
+        }   
 
         private void btnAdicionar_Click(object sender, EventArgs e)
         {
@@ -90,7 +91,7 @@ namespace Cantininha_do_estelionato
                 return;
             }
 
-            List<Produto> listadeprodutos = new List<Produto>();
+
 
             foreach (var item in listBox2.Items)
             {
@@ -103,7 +104,9 @@ namespace Cantininha_do_estelionato
                 data = DateTime.Now,
                 pagamento = pagamento.SelectedItem.ToString(),
                 produtos = listadeprodutos,
-                status = status.feito
+                status = btnparaviagem.Checked ?
+                (status)Enum.Parse(typeof(status), "Para_viagem"):
+                (status)Enum.Parse(typeof(status), "feito"),
 
 
 
@@ -145,36 +148,7 @@ namespace Cantininha_do_estelionato
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-        }
-
-        private void btnviagem_Click(object sender, EventArgs e)
-        {
-            if (listBox2.Items.Count == 0)
-            {
-                MessageBox.Show("A comanda ta vazia animal");
-                return;
-            }
-
-
-            if (string.IsNullOrWhiteSpace(nome.Text))
-            {
-                MessageBox.Show("Tem que por seu nome garai");
-                return;
-            }
-
-
-            if (pagamento.SelectedIndex == -1)
-            {
-                MessageBox.Show("Escolha a Forma de Pagamento");
-                return;
-            }
-
-
-
-            MessageBox.Show($"PEDIDO EM PREPARAÇÃO \n\n{"Nome:"} {nome.Text}\n \n{"Forma de Pagamento:"} {pagamento.Text}  \n{DateTime.Now}\n{"Valor Total:"} {total:F2} \n pra viagem ");
-            //MessageBox.Show(nome.Text);
-
-        }
+        }              
 
         private void pagamento_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -186,6 +160,11 @@ namespace Cantininha_do_estelionato
             Balcão balcao = new Balcão();
 
             balcao.ShowDialog();
+        }
+
+        private void btnparaviagem_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

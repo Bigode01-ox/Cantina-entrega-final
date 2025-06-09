@@ -46,8 +46,8 @@
             numero = new Label();
             txtdinheiro = new TextBox();
             txttroco = new Label();
-            btnviagem = new Button();
             button1 = new Button();
+            btnparaviagem = new CheckBox();
             ((System.ComponentModel.ISupportInitialize)txtQuantidade).BeginInit();
             SuspendLayout();
             // 
@@ -242,18 +242,6 @@
             txttroco.TabIndex = 18;
             txttroco.Text = "Troco";
             // 
-            // btnviagem
-            // 
-            btnviagem.BackColor = Color.Gray;
-            btnviagem.ForeColor = Color.GreenYellow;
-            btnviagem.Location = new Point(303, 405);
-            btnviagem.Name = "btnviagem";
-            btnviagem.Size = new Size(178, 23);
-            btnviagem.TabIndex = 19;
-            btnviagem.Text = "Para viagem";
-            btnviagem.UseVisualStyleBackColor = false;
-            btnviagem.Click += btnviagem_Click;
-            // 
             // button1
             // 
             button1.BackColor = Color.Gray;
@@ -266,14 +254,25 @@
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
+            // btnparaviagem
+            // 
+            btnparaviagem.AutoSize = true;
+            btnparaviagem.Location = new Point(367, 65);
+            btnparaviagem.Name = "btnparaviagem";
+            btnparaviagem.Size = new Size(91, 19);
+            btnparaviagem.TabIndex = 21;
+            btnparaviagem.Text = "Para viagem";
+            btnparaviagem.UseVisualStyleBackColor = true;
+            btnparaviagem.CheckedChanged += btnparaviagem_CheckedChanged;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(800, 450);
+            Controls.Add(btnparaviagem);
             Controls.Add(button1);
-            Controls.Add(btnviagem);
             Controls.Add(txttroco);
             Controls.Add(txtdinheiro);
             Controls.Add(numero);
@@ -319,7 +318,7 @@
         private Label numero;
         private TextBox txtdinheiro;
         private Label txttroco;
-        private Button btnviagem;
         private Button button1;
+        private CheckBox btnparaviagem;
     }
 }

@@ -28,22 +28,23 @@ namespace Cantininha_do_estelionato
 
         }
 
-        private void btnentregar_Click(object sender, EventArgs e)
-        {
+        private void btnentregar_Click(object sender, EventArgs e)          
+        { 
+           
             if (listBox1.SelectedItem != null)
-            {
-                foreach (Pedido pidido in listadepedidos.pedidos)
-                {
-                    if (pidido.status == status.Conluido)
-                    {
-                        MessageBox.Show("Pedido Entregue");
-                    }
+           {
+               foreach (Pedido pidido in listadepedidos.pedidos)
+               {
+                    pidido.status = status.Conluido;
+                    listBox2.Items.Add(pidido);
+                    listBox1.ClearSelected();
+
                 }
             }
             else
             {
 
-                MessageBox.Show("Selecione um pedido para alterar");
+                MessageBox.Show("Selecione um pedido para alterar ou entregar");
                
             }
            

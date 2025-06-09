@@ -52,7 +52,7 @@
             listBox2.ForeColor = Color.GreenYellow;
             listBox2.FormattingEnabled = true;
             listBox2.ItemHeight = 15;
-            listBox2.Location = new Point(462, 12);
+            listBox2.Location = new Point(459, -3);
             listBox2.Name = "listBox2";
             listBox2.Size = new Size(343, 169);
             listBox2.TabIndex = 1;
