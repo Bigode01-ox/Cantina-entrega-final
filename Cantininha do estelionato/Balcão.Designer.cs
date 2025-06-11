@@ -41,7 +41,7 @@
             listBox1.ForeColor = Color.GreenYellow;
             listBox1.FormattingEnabled = true;
             listBox1.ItemHeight = 15;
-            listBox1.Location = new Point(0, -1);
+            listBox1.Location = new Point(-2, -1);
             listBox1.Name = "listBox1";
             listBox1.Size = new Size(343, 167);
             listBox1.TabIndex = 0;
@@ -52,7 +52,7 @@
             listBox2.ForeColor = Color.GreenYellow;
             listBox2.FormattingEnabled = true;
             listBox2.ItemHeight = 15;
-            listBox2.Location = new Point(459, -3);
+            listBox2.Location = new Point(460, -1);
             listBox2.Name = "listBox2";
             listBox2.Size = new Size(343, 169);
             listBox2.TabIndex = 1;

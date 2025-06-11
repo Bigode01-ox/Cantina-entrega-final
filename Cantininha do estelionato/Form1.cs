@@ -106,7 +106,7 @@ namespace Cantininha_do_estelionato
                 produtos = listadeprodutos,
                 status = btnparaviagem.Checked ?
                 (status)Enum.Parse(typeof(status), "Para_viagem"):
-                (status)Enum.Parse(typeof(status), "feito"),
+                (status)Enum.Parse(typeof(status), "Criado"),
 
 
 

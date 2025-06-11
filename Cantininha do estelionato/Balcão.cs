@@ -18,7 +18,17 @@ namespace Cantininha_do_estelionato
             InitializeComponent();
             foreach (Pedido pidido in listadepedidos.pedidos)
             {
-                listBox1.Items.Add(pidido);
+                if (pidido.status == status.Criado || pidido.status == status.Para_viagem)
+                {
+                    listBox1.Items.Add(pidido);    
+                }
+                else if(pidido.status == status.Concluido)
+                {
+                    listBox2.Items.Add(pidido);
+                }
+                
+
+
 
             }
         }
@@ -29,26 +39,24 @@ namespace Cantininha_do_estelionato
         }
 
         private void btnentregar_Click(object sender, EventArgs e)          
-        { 
-           
-            if (listBox1.SelectedItem != null)
-           {
-               foreach (Pedido pidido in listadepedidos.pedidos)
+        {
+
+            foreach (var item in listBox1.SelectedItems)
                {
-                    pidido.status = status.Conluido;
-                    listBox2.Items.Add(pidido);
-                    listBox1.ClearSelected();
-
+                if (item is Pedido itempedido)
+                {
+                    itempedido.status = status.Concluido;
+                    listBox2.Items.Add(itempedido);
+                    
+                    
                 }
-            }
-            else
-            {
+                
 
-                MessageBox.Show("Selecione um pedido para alterar ou entregar");
-               
             }
+            listBox1.Items.Remove(listBox1.SelectedItem);
+        }
            
             
-        }
+        
     }
 }

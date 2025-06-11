@@ -27,9 +27,9 @@ namespace Cantininha_do_estelionato
     }
     public enum status
     {
-        Conluido,
+        Concluido,
         Preparando,
-        feito,
+        Criado,
         Para_viagem,
 
     }
