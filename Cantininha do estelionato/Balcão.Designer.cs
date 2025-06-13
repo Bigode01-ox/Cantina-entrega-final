@@ -40,30 +40,32 @@
             listBox1.BorderStyle = BorderStyle.FixedSingle;
             listBox1.ForeColor = Color.GreenYellow;
             listBox1.FormattingEnabled = true;
-            listBox1.ItemHeight = 15;
-            listBox1.Location = new Point(-2, -1);
+            listBox1.Location = new Point(318, 2);
+            listBox1.Margin = new Padding(3, 4, 3, 4);
             listBox1.Name = "listBox1";
-            listBox1.Size = new Size(343, 167);
+            listBox1.Size = new Size(403, 222);
             listBox1.TabIndex = 0;
+            listBox1.SelectedIndexChanged += listBox1_SelectedIndexChanged;
             // 
             // listBox2
             // 
             listBox2.BackColor = Color.Gray;
             listBox2.ForeColor = Color.GreenYellow;
             listBox2.FormattingEnabled = true;
-            listBox2.ItemHeight = 15;
-            listBox2.Location = new Point(460, -1);
+            listBox2.Location = new Point(318, 314);
+            listBox2.Margin = new Padding(3, 4, 3, 4);
             listBox2.Name = "listBox2";
-            listBox2.Size = new Size(343, 169);
+            listBox2.Size = new Size(403, 224);
             listBox2.TabIndex = 1;
             // 
             // btnentregar
             // 
             btnentregar.BackColor = Color.Gray;
             btnentregar.ForeColor = Color.GreenYellow;
-            btnentregar.Location = new Point(122, 172);
+            btnentregar.Location = new Point(318, 232);
+            btnentregar.Margin = new Padding(3, 4, 3, 4);
             btnentregar.Name = "btnentregar";
-            btnentregar.Size = new Size(101, 27);
+            btnentregar.Size = new Size(115, 64);
             btnentregar.TabIndex = 2;
             btnentregar.Text = "Entregar";
             btnentregar.UseVisualStyleBackColor = false;
@@ -71,16 +73,17 @@
             // 
             // Balcão
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaption;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(914, 600);
             Controls.Add(btnentregar);
             Controls.Add(listBox2);
             Controls.Add(listBox1);
             ForeColor = Color.Coral;
             ImeMode = ImeMode.Hiragana;
+            Margin = new Padding(3, 4, 3, 4);
             Name = "Balcão";
             Text = "Balcão";
             Load += Balcão_Load;
