@@ -12,6 +12,11 @@ namespace Cantininha_do_estelionato
 
         public decimal valor { get; set; }
         public int quantidade { get; set; }
+        public bool paracozinha {  get; set; }
+
+      pracozinha (true);
+
+       
 
         public Produto(string nome, decimal valor, int quantidade)
         {
