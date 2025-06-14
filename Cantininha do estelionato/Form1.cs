@@ -11,16 +11,16 @@ namespace Cantininha_do_estelionato
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            listBox1.Items.Add(new Produto("Pão de Queijo", 3.50m, 0));
-            listBox1.Items.Add(new Produto("Coxinha", 5.00m, 0));
-            listBox1.Items.Add(new Produto("Pastel de Carne", 6.00m, 0));
-            listBox1.Items.Add(new Produto("Pastel de Queijo", 5.50m, 0));
-            listBox1.Items.Add(new Produto("Suco Natural (300ml)", 4.00m, 0));
-            listBox1.Items.Add(new Produto("Refrigerante Lata", 4.50m, 0));
-            listBox1.Items.Add(new Produto("Burgão Simples", 8.00m, 0));
-            listBox1.Items.Add(new Produto("Burgão com Queijo", 9.00m, 0));
-            listBox1.Items.Add(new Produto("X-Tudão", 12.00m, 0));
-            listBox1.Items.Add(new Produto("Agua Mineral", 2.50m, 0));
+            listBox1.Items.Add(new Produto("Pão de Queijo", 3.50m, 0, false));
+            listBox1.Items.Add(new Produto("Coxinha", 5.00m, 0, false));
+            listBox1.Items.Add(new Produto("Pastel de Carne", 6.00m, 0, true));
+            listBox1.Items.Add(new Produto("Pastel de Queijo", 5.50m, 0, true));
+            listBox1.Items.Add(new Produto("Suco Natural (300ml)", 4.00m, 0, false));
+            listBox1.Items.Add(new Produto("Refrigerante Lata", 4.50m, 0, false));
+            listBox1.Items.Add(new Produto("Burgão Simples", 8.00m, 0, true));
+            listBox1.Items.Add(new Produto("Burgão com Queijo", 9.00m, 0, true));
+            listBox1.Items.Add(new Produto("X-Tudão", 12.00m, 0, true));
+            listBox1.Items.Add(new Produto("Agua Mineral", 2.50m, 0, false));
         }
 
         private void PreçoTotal_click(object sender, EventArgs e)
@@ -71,6 +71,9 @@ namespace Cantininha_do_estelionato
 
         private void btnFecharpedido_Click(object sender, EventArgs e)
         {
+
+
+
             if (listBox2.Items.Count == 0)
             {
                 MessageBox.Show("A comanda ta vazia animal");
