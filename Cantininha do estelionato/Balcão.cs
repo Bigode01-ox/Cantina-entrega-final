@@ -22,10 +22,10 @@ namespace Cantininha_do_estelionato
                 {
                     listBox1.Items.Add(pidido);
                 }
-                else if (pidido.status == status.Concluido)
-                {
-                    listBox2.Items.Add(pidido);
-                }
+                //else if (pidido.status == status.Concluido)
+                //{
+                    //listBox2.Items.Add(pidido);
+                //}
 
 
 
@@ -72,6 +72,13 @@ namespace Cantininha_do_estelionato
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btncozinha_Click(object sender, EventArgs e)
+        {
+            Cozinha cozinha = new Cozinha();    
+
+            cozinha.ShowDialog();
         }
     }
 }

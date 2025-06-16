@@ -32,6 +32,7 @@
             listBox1 = new ListBox();
             listBox2 = new ListBox();
             btnentregar = new Button();
+            btncozinha = new Button();
             SuspendLayout();
             // 
             // listBox1
@@ -71,6 +72,18 @@
             btnentregar.UseVisualStyleBackColor = false;
             btnentregar.Click += btnentregar_Click;
             // 
+            // btncozinha
+            // 
+            btncozinha.BackColor = Color.Gray;
+            btncozinha.ForeColor = Color.GreenYellow;
+            btncozinha.Location = new Point(589, 232);
+            btncozinha.Name = "btncozinha";
+            btncozinha.Size = new Size(116, 64);
+            btncozinha.TabIndex = 3;
+            btncozinha.Text = "Cozinha";
+            btncozinha.UseVisualStyleBackColor = false;
+            btncozinha.Click += btncozinha_Click;
+            // 
             // Balcão
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -78,6 +91,7 @@
             BackColor = SystemColors.ActiveCaption;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(914, 600);
+            Controls.Add(btncozinha);
             Controls.Add(btnentregar);
             Controls.Add(listBox2);
             Controls.Add(listBox1);
@@ -95,5 +109,6 @@
         private ListBox listBox1;
         private ListBox listBox2;
         private Button btnentregar;
+        private Button btncozinha;
     }
 }

@@ -108,8 +108,8 @@ namespace Cantininha_do_estelionato
                 pagamento = pagamento.SelectedItem.ToString(),
                 produtos = listadeprodutos,
                 status = btnparaviagem.Checked ?
-                (status)Enum.Parse(typeof(status), "Para_viagem"):
-                (status)Enum.Parse(typeof(status), "Criado"),
+                (Status)Enum.Parse(typeof(Status), "Para_viagem"):
+                (Status)Enum.Parse(typeof(Status), "Criado"),
 
 
 

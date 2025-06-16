@@ -12,7 +12,7 @@ namespace Cantininha_do_estelionato
         public DateTime data { get; set; }
         public string pagamento { get; set; }
         public List<Produto> produtos { get; set; }
-        public status status { get; set; }
+        public status status { get; set; } 
 
         public override string ToString()
         {
