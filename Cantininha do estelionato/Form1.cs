@@ -26,7 +26,7 @@ namespace Cantininha_do_estelionato
         private void PreçoTotal_click(object sender, EventArgs e)
         {
 
-        }   
+        }
 
         private void btnAdicionar_Click(object sender, EventArgs e)
         {
@@ -55,7 +55,7 @@ namespace Cantininha_do_estelionato
             {
                 Produto itemSelecionado = (Produto)listBox2.SelectedItem;
                 listBox2.Items.Remove(itemSelecionado);
-                total -= itemSelecionado.valor; // total = total - itemSelecionado.valor;
+                total -= itemSelecionado.valor; 
                 listBox1.ClearSelected();
                 listBox2.ClearSelected();
                 numero.Text = total.ToString();
@@ -101,23 +101,48 @@ namespace Cantininha_do_estelionato
                 listadeprodutos.Add(item as Produto);
             }
 
-            Pedido pidido = new Pedido()
+
+            foreach(Produto produto in listBox2.Items)
             {
-                nome = nome.Text,
-                data = DateTime.Now,
-                pagamento = pagamento.SelectedItem.ToString(),
-                produtos = listadeprodutos,
-                status = btnparaviagem.Checked ?
-                (Status)Enum.Parse(typeof(Status), "Para_viagem"):
-                (Status)Enum.Parse(typeof(Status), "Criado"),
+                if (produto.iscozinha == true)
+                {
+
+                    Pedido pididocozinha = new Pedido()
+                    {
+                        nome = nome.Text,
+                        data = DateTime.Now,
+                        pagamento = pagamento.SelectedItem.ToString(),
+                        produtos = listadeprodutos,
+                        status = status.Preparando
+
+                    };
+                    listadepedidos.pedidos.Add(pididocozinha);
+                }
+                else
+                {
+                    Pedido pidido = new Pedido()
+                    {
+                        nome = nome.Text,
+                        data = DateTime.Now,
+                        pagamento = pagamento.SelectedItem.ToString(),
+                        produtos = listadeprodutos,
+                        status = btnparaviagem.Checked ?
+    (status)Enum.Parse(typeof(status), "Para_viagem") :
+    (status)Enum.Parse(typeof(status), "Criado"),
+
+                    };
+                    listadepedidos.pedidos.Add(pidido);
+                }
+            }
+            
+                
+           
 
 
-
-            };
-            listadepedidos.pedidos.Add(pidido);
+            
             MessageBox.Show($"PEDIDO EM PREPARAÇÃO \n\n{"Nome:"} {nome.Text}\n \n{"Forma de Pagamento:"} {pagamento.Text}  \n{DateTime.Now}\n{"Valor Total:"} {total:F2} \n");
 
-            //MessageBox.Show(nome.Text);
+            MessageBox.Show(nome.Text);
 
 
         }
@@ -151,7 +176,7 @@ namespace Cantininha_do_estelionato
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-        }              
+        }
 
         private void pagamento_SelectedIndexChanged(object sender, EventArgs e)
         {
