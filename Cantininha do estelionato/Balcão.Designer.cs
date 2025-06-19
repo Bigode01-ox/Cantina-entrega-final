@@ -37,11 +37,11 @@
             // 
             // listBox1
             // 
-            listBox1.BackColor = Color.Gray;
+            listBox1.BackColor = Color.Silver;
             listBox1.BorderStyle = BorderStyle.FixedSingle;
-            listBox1.ForeColor = Color.GreenYellow;
+            listBox1.ForeColor = Color.Black;
             listBox1.FormattingEnabled = true;
-            listBox1.Location = new Point(318, 2);
+            listBox1.Location = new Point(12, 2);
             listBox1.Margin = new Padding(3, 4, 3, 4);
             listBox1.Name = "listBox1";
             listBox1.Size = new Size(403, 222);
@@ -50,10 +50,10 @@
             // 
             // listBox2
             // 
-            listBox2.BackColor = Color.Gray;
-            listBox2.ForeColor = Color.GreenYellow;
+            listBox2.BackColor = Color.Silver;
+            listBox2.ForeColor = Color.Black;
             listBox2.FormattingEnabled = true;
-            listBox2.Location = new Point(318, 314);
+            listBox2.Location = new Point(499, 303);
             listBox2.Margin = new Padding(3, 4, 3, 4);
             listBox2.Name = "listBox2";
             listBox2.Size = new Size(403, 224);
@@ -61,9 +61,9 @@
             // 
             // btnentregar
             // 
-            btnentregar.BackColor = Color.Gray;
-            btnentregar.ForeColor = Color.GreenYellow;
-            btnentregar.Location = new Point(318, 232);
+            btnentregar.BackColor = Color.GreenYellow;
+            btnentregar.ForeColor = Color.Black;
+            btnentregar.Location = new Point(443, 28);
             btnentregar.Margin = new Padding(3, 4, 3, 4);
             btnentregar.Name = "btnentregar";
             btnentregar.Size = new Size(115, 64);
@@ -74,9 +74,9 @@
             // 
             // btncozinha
             // 
-            btncozinha.BackColor = Color.Gray;
-            btncozinha.ForeColor = Color.GreenYellow;
-            btncozinha.Location = new Point(589, 232);
+            btncozinha.BackColor = Color.GreenYellow;
+            btncozinha.ForeColor = Color.Black;
+            btncozinha.Location = new Point(333, 453);
             btncozinha.Name = "btncozinha";
             btncozinha.Size = new Size(116, 64);
             btncozinha.TabIndex = 3;

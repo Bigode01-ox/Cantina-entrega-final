@@ -52,6 +52,17 @@ namespace Cantininha_do_estelionato
             }
 
 
+            foreach (Pedido pidido in listadepedidos.pedidos)
+            {
+                if (pidido.status == status.Preparando)
+                {
+                    MessageBox.Show("O pedido precisa ser preparado antes de entregar");
+                }
+
+
+            }
+
+
             foreach (var item in listBox1.SelectedItems)
             {
                 if (item is Pedido itempedido)

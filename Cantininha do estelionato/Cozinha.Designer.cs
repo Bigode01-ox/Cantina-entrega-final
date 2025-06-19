@@ -28,47 +28,52 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cozinha));
             listBox1 = new ListBox();
             listBox2 = new ListBox();
-            button1 = new Button();
+            btnpreparar = new Button();
             SuspendLayout();
             // 
             // listBox1
             // 
+            listBox1.BackColor = Color.Silver;
             listBox1.FormattingEnabled = true;
             listBox1.Location = new Point(12, 12);
             listBox1.Name = "listBox1";
-            listBox1.Size = new Size(334, 124);
+            listBox1.Size = new Size(334, 144);
             listBox1.TabIndex = 0;
             // 
             // listBox2
             // 
+            listBox2.BackColor = Color.Silver;
             listBox2.FormattingEnabled = true;
-            listBox2.Location = new Point(454, 12);
+            listBox2.Location = new Point(465, 12);
             listBox2.Name = "listBox2";
-            listBox2.Size = new Size(334, 124);
+            listBox2.Size = new Size(334, 144);
             listBox2.TabIndex = 1;
             // 
-            // button1
+            // btnpreparar
             // 
-            button1.Location = new Point(353, 164);
-            button1.Name = "button1";
-            button1.Size = new Size(94, 39);
-            button1.TabIndex = 2;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
+            btnpreparar.BackColor = Color.Silver;
+            btnpreparar.Location = new Point(353, 164);
+            btnpreparar.Name = "btnpreparar";
+            btnpreparar.Size = new Size(94, 39);
+            btnpreparar.TabIndex = 2;
+            btnpreparar.Text = "Preparar";
+            btnpreparar.UseVisualStyleBackColor = false;
+            btnpreparar.Click += btnpreparar_Click;
             // 
             // Cozinha
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(800, 450);
-            Controls.Add(button1);
+            Controls.Add(btnpreparar);
             Controls.Add(listBox2);
             Controls.Add(listBox1);
             Name = "Cozinha";
             Text = "Cozinha";
-            Load += Cozinha_Load;
             ResumeLayout(false);
         }
 
@@ -76,6 +81,6 @@
 
         private ListBox listBox1;
         private ListBox listBox2;
-        private Button button1;
+        private Button btnpreparar;
     }
 }
