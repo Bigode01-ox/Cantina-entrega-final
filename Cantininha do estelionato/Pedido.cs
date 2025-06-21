@@ -31,7 +31,7 @@ namespace Cantininha_do_estelionato
         Preparando,
         Criado,
         Para_viagem,
-
+        preparado,
     }
 
 

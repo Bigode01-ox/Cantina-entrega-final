@@ -22,7 +22,7 @@ namespace Cantininha_do_estelionato
                 {
                     listBox1.Items.Add(pidido);
                 }
-               else if (pidido.status == status.Concluido)
+               else if (pidido.status == status.preparado)
                 {
                     listBox2.Items.Add(pidido);
                 }
@@ -54,7 +54,7 @@ namespace Cantininha_do_estelionato
             {
                 if (item is Pedido itempedido)
                 {
-                    itempedido.status = status.Concluido;
+                    itempedido.status = status.preparado;
                     listBox2.Items.Add(itempedido);
                     MessageBox.Show("Pedido preparado");
 

@@ -26,6 +26,7 @@ namespace Cantininha_do_estelionato
                 {
                     listBox2.Items.Add(pidido);
                 }
+                listBox2.Items.Remove(pidido);
 
 
 
@@ -57,6 +58,7 @@ namespace Cantininha_do_estelionato
                 if (pidido.status == status.Preparando)
                 {
                     MessageBox.Show("O pedido precisa ser preparado antes de entregar");
+                    return;
                 }
 
 
