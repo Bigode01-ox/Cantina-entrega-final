@@ -18,15 +18,17 @@ namespace Cantininha_do_estelionato
             InitializeComponent();
             foreach (Pedido pidido in listadepedidos.pedidos)
             {
-                if (pidido.status == status.Criado || pidido.status == status.Para_viagem)
+                if (pidido.status == status.Para_viagem || pidido.status == status.Criado || pidido.status == status.preparado)
                 {
                     listBox1.Items.Add(pidido);
                 }
+                
+                                 
                 else if (pidido.status == status.Concluido)
                 {
                     listBox2.Items.Add(pidido);
                 }
-                listBox2.Items.Remove(pidido);
+
 
 
 

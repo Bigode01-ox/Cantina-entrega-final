@@ -32,6 +32,7 @@ namespace Cantininha_do_estelionato
 
 
             }
+            listBox2.Items.Remove(listBox1.SelectedItems);
         }
 
        
