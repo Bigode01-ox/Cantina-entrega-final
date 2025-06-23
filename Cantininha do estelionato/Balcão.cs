@@ -22,6 +22,7 @@ namespace Cantininha_do_estelionato
                 {
                     listBox1.Items.Add(pidido);
                 }
+
                 
                                  
                 else if (pidido.status == status.Concluido)
@@ -95,5 +96,6 @@ namespace Cantininha_do_estelionato
 
             cozinha.ShowDialog();
         }
+        
     }
 }

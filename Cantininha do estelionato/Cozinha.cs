@@ -66,7 +66,9 @@ namespace Cantininha_do_estelionato
 
             }
             listBox1.Items.Remove(listBox1.SelectedItem);
+           
 
         }
+        
     }
 }
