@@ -16,16 +16,16 @@ namespace Cantininha_do_estelionato
         public Balcão()
         {
             InitializeComponent();
-            foreach (Pedido pidido in listadepedidos.pedidos)
+            foreach (Pedido pidido in listaDePedidos.pedidos)
             {
-                if (pidido.status == status.Para_viagem || pidido.status == status.Criado || pidido.status == status.preparado)
+                if (pidido.status == Status.Para_viagem || pidido.status == Status.Criado || pidido.status == Status.preparado)
                 {
                     listBox1.Items.Add(pidido);
                 }
 
                 
                                  
-                else if (pidido.status == status.Concluido)
+                else if (pidido.status == Status.Concluido)
                 {
                     listBox2.Items.Add(pidido);
                 }
@@ -56,9 +56,9 @@ namespace Cantininha_do_estelionato
             }
 
 
-            foreach (Pedido pidido in listadepedidos.pedidos)
+            foreach (Pedido pidido in listaDePedidos.pedidos)
             {
-                if (pidido.status == status.Preparando)
+                if (pidido.status == Status.Preparando)
                 {
                     MessageBox.Show("O pedido precisa ser preparado antes de entregar");
                     return;
@@ -72,7 +72,7 @@ namespace Cantininha_do_estelionato
             {
                 if (item is Pedido itempedido)
                 {
-                    itempedido.status = status.Concluido;
+                    itempedido.status = Status.Concluido;
                     listBox2.Items.Add(itempedido);
                     MessageBox.Show("Pedido entregue");
 

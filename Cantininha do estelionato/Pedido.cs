@@ -12,28 +12,11 @@ namespace Cantininha_do_estelionato
         public DateTime data { get; set; }
         public string pagamento { get; set; }
         public List<Produto> produtos { get; set; }
-        public status status { get; set; } 
+        public Status status { get; set; } 
 
         public override string ToString()
         {
             return $"{nome} - {data} - {pagamento} - {status}";
          }
-    }
-    public static class listadepedidos
-
-    {
-
-        public static List<Pedido> pedidos = new List<Pedido>(); 
-    }
-    public enum status
-    {
-        Concluido,
-        Preparando,
-        Criado,
-        Para_viagem,
-        preparado,
-    }
-
-
-
+    } 
 }

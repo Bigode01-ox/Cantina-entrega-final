@@ -11,16 +11,16 @@ namespace Cantininha_do_estelionato
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            listBox1.Items.Add(new Produto("Pão de Queijo", 3.50m, 0, false));
-            listBox1.Items.Add(new Produto("Coxinha", 5.00m, 0, false));
-            listBox1.Items.Add(new Produto("Pastel de Carne", 6.00m, 0, true));
-            listBox1.Items.Add(new Produto("Pastel de Queijo", 5.50m, 0, true));
-            listBox1.Items.Add(new Produto("Suco Natural (300ml)", 4.00m, 0, false));
-            listBox1.Items.Add(new Produto("Refrigerante Lata", 4.50m, 0, false));
-            listBox1.Items.Add(new Produto("Burgão Simples", 8.00m, 0, true));
-            listBox1.Items.Add(new Produto("Burgão com Queijo", 9.00m, 0, true));
-            listBox1.Items.Add(new Produto("X-Tudão", 12.00m, 0, true));
-            listBox1.Items.Add(new Produto("Agua Mineral", 2.50m, 0, false));
+            listBox1.Items.Add(new Produto(1,"Pão de Queijo", 3.50m, 0, false));
+            listBox1.Items.Add(new Produto(2,"Coxinha", 5.00m, 0, false));
+            listBox1.Items.Add(new Produto(3,"Pastel de Carne", 6.00m, 0, true));
+            listBox1.Items.Add(new Produto(4,"Pastel de Queijo", 5.50m, 0, true));
+            listBox1.Items.Add(new Produto(4,"Suco Natural (300ml)", 4.00m, 0, false));
+            listBox1.Items.Add(new Produto(5,"Refrigerante Lata", 4.50m, 0, false));
+            listBox1.Items.Add(new Produto(6,"Burgão Simples", 8.00m, 0, true));
+            listBox1.Items.Add(new Produto(7,"Burgão com Queijo", 9.00m, 0, true));
+            listBox1.Items.Add(new Produto(8,"X-Tudão", 12.00m, 0, true));
+            listBox1.Items.Add(new Produto(9,"Agua Mineral", 2.50m, 0, false));
         }
 
         private void PreçoTotal_click(object sender, EventArgs e)
@@ -39,6 +39,7 @@ namespace Cantininha_do_estelionato
                 total += itemSelecionado.valor * itemSelecionado.quantidade;
                 listBox1.ClearSelected();
                 numero.Text = total.ToString();
+                
             }
             else
             {
@@ -54,8 +55,8 @@ namespace Cantininha_do_estelionato
             if (listBox2.SelectedItem != null)
             {
                 Produto itemSelecionado = (Produto)listBox2.SelectedItem;
+                total -= itemSelecionado.valor * itemSelecionado.quantidade;
                 listBox2.Items.Remove(itemSelecionado);
-                total -= itemSelecionado.valor; 
                 listBox1.ClearSelected();
                 listBox2.ClearSelected();
                 numero.Text = total.ToString();
@@ -101,47 +102,30 @@ namespace Cantininha_do_estelionato
                 listadeprodutos.Add(item as Produto);
             }
 
+            Pedido pidido = new Pedido();
 
-            foreach(Produto produto in listBox2.Items)
+            foreach (Produto produto in listBox2.Items)
             {
                 if (produto.iscozinha == true)
                 {
-
-                    Pedido pididocozinha = new Pedido()
-                    {
-                        nome = nome.Text,
-                        data = DateTime.Now,
-                        pagamento = pagamento.SelectedItem.ToString(),
-                        produtos = listadeprodutos,
-                        status = status.Preparando
-
-                    };
-                    listadepedidos.pedidos.Add(pididocozinha);
+                    pidido.status = Status.Preparando;
+                    break;
                 }
                 else
                 {
-                    Pedido pidido = new Pedido()
-                    {
-                        nome = nome.Text,
-                        data = DateTime.Now,
-                        pagamento = pagamento.SelectedItem.ToString(),
-                        produtos = listadeprodutos,
-                        status = btnparaviagem.Checked ?
-    (status)Enum.Parse(typeof(status), "Para_viagem") :
-    (status)Enum.Parse(typeof(status), "Criado"),
-
-                    };
-                    listadepedidos.pedidos.Add(pidido);
+                    pidido.status = btnparaviagem.Checked ? (Status)Enum.Parse(typeof(Status), "Para_viagem") : (Status)Enum.Parse(typeof(Status), "Criado");
                 }
-            }
-            
+            }                  
+                    
+            pidido.nome = nome.Text;
+            pidido.data = DateTime.Now;
+            pidido.pagamento = pagamento.SelectedItem.ToString();
+            pidido.produtos = listadeprodutos;
+
+            listaDePedidos.pedidos.Add(pidido);
                 
-           
 
-
-            
-            MessageBox.Show($"PEDIDO EM PREPARAÇÃO \n\n{"Nome:"} {nome.Text}\n \n{"Forma de Pagamento:"} {pagamento.Text}  \n{DateTime.Now}\n{"Valor Total:"} {total:F2} \n");
-
+            MessageBox.Show($"PEDIDO EM PREPARAÇÃO \n Nome: {nome.Text}\n Forma de Pagamento: {pagamento.Text}  \n{DateTime.Now}\nValor Total: {total:F2} \n");
         }
 
         private void label1_Click(object sender, EventArgs e)

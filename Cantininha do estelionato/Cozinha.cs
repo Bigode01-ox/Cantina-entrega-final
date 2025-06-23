@@ -16,13 +16,13 @@ namespace Cantininha_do_estelionato
         public Cozinha()
         {
             InitializeComponent();
-            foreach (Pedido pidido in listadepedidos.pedidos)
+            foreach (Pedido pidido in listaDePedidos.pedidos)
             {
-                if (pidido.status == status.Preparando)
+                if (pidido.status == Status.Preparando)
                 {
-                    listBox1.Items.Add(pidido);
+                    listBox1.Items.Add(pidido);                    
                 }
-               else if (pidido.status == status.preparado)
+               else if (pidido.status == Status.preparado)
                 {
                     listBox2.Items.Add(pidido);
                 }
@@ -55,18 +55,20 @@ namespace Cantininha_do_estelionato
             {
                 if (item is Pedido itempedido)
                 {
-                    itempedido.status = status.preparado;
+                    itempedido.status = Status.preparado;
                     listBox2.Items.Add(itempedido);
                     MessageBox.Show("Pedido preparado");
 
 
 
                 }
+            
 
 
             }
             listBox1.Items.Remove(listBox1.SelectedItem);
-           
+
+            
 
         }
         
