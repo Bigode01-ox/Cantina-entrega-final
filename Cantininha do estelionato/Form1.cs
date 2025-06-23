@@ -7,7 +7,9 @@ namespace Cantininha_do_estelionato
         public Form1()
         {
             InitializeComponent();
+            txtQuantidade.Minimum = 1;
         }
+
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -33,6 +35,7 @@ namespace Cantininha_do_estelionato
             if (listBox1.SelectedItem != null)
             {
 
+               
                 Produto itemSelecionado = (Produto)listBox1.SelectedItem;
                 itemSelecionado.quantidade = (int)txtQuantidade.Value;
                 listBox2.Items.Add(itemSelecionado);
@@ -54,12 +57,13 @@ namespace Cantininha_do_estelionato
         {
             if (listBox2.SelectedItem != null)
             {
-                Produto itemSelecionado = (Produto)listBox2.SelectedItem;
+               Produto itemSelecionado = (Produto)listBox2.SelectedItem;      
+               listBox2.Items.Remove(itemSelecionado.quantidade);
+               listBox2.Items.Remove(itemSelecionado);
                 total -= itemSelecionado.valor * itemSelecionado.quantidade;
-                listBox2.Items.Remove(itemSelecionado);
                 listBox1.ClearSelected();
-                listBox2.ClearSelected();
-                numero.Text = total.ToString();
+               listBox2.ClearSelected();
+               numero.Text = total.ToString();
             }
             else
             {
@@ -151,8 +155,8 @@ namespace Cantininha_do_estelionato
 
         private void txtQuantidade_ValueChanged(object sender, EventArgs e)
         {
-
-        }
+           
+        }    
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
